@@ -16,4 +16,12 @@ Also, beware of plateaus !!! `[1, 2, 2, 2, 1]` has a peak while `[1, 2, 2, 2, 3]
 
 Have fun!
 
-#Question 2
+#Day 2
+
+You are given a node that is the beginning of a linked list. This list always contains a tail and a loop.
+
+Your objective is to determine the length of the loop.
+
+#Day 3
+
+Sudoku Checker – Write a function that check to see if a sudoku board has or has not been correctly filled out.

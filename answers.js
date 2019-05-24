@@ -1,4 +1,4 @@
-// QUESTION 1
+// DAY 1
 
 function pickPeaks(arr) {
 
@@ -26,3 +26,18 @@ function pickPeaks(arr) {
     })
     return obj
 }
+
+// DAY 2
+
+function loop_size(node) {
+    var nodes = []
+    var n = node
+
+    while (nodes.indexOf(n) == -1) {
+        nodes.push(n)
+        n = n.next
+    }
+    return nodes.length - nodes.indexOf(n)
+}
+
+// DAY 3
