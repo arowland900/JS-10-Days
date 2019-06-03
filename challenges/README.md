@@ -25,3 +25,17 @@ Your objective is to determine the length of the loop.
 #Day 3
 
 Sudoku Checker – Write a function that check to see if a sudoku board has or has not been correctly filled out.
+
+#Day 4
+
+We need to sum big numbers and we require your help.
+
+Write a function that returns the sum of two numbers. The input numbers are strings and the function must return a string.
+
+Example
+`add("123", "321"); -> "444"`
+`add("11", "99"); -> "110"`
+Notes: 
+The input numbers are big.
+The input is a string of only digits
+The numbers are positives

@@ -77,3 +77,67 @@ function doneOrNot(board) {
     }
     return "Finished!"
 }
+
+// DAY 4
+
+function add(a, b) {
+
+    if (b.length < 10 && a.length < 10) {
+        return (Number(a) + Number(b)).toString();
+    }
+
+    var bigNum, smallNum, bigArr, smallArr, i
+    var remainder = 0
+    var total = []
+
+    if (a.length >= b.length) {
+        bigNum = a
+        smallNum = b
+    } else {
+        bigNum = b
+        smallNum = a
+    }
+
+    bigArr = bigNum.split('').reverse()
+    smallArr = smallNum.split('').reverse()
+    for (i = 0; i <= bigArr.length - 1; i++) {
+        if (smallArr[i]) {
+
+            var num = Number(bigArr[i]) + Number(smallArr[i])
+            if (num + remainder < 10) {
+                total.push((num + remainder).toString())
+                if (num + remainder >= 10) {
+                    remainder = 1
+                } else {
+                    remainder = 0
+                }
+            } else {
+                if (i == bigArr.length - 1) {
+                    total.push((num + remainder).toString())
+                } else {
+                    total.push((num + remainder).toString().split('')[1])
+                    if (num + remainder >= 10) {
+                        remainder = 1
+                    } else {
+                        remainder = 0
+                    }
+                }
+            }
+        } else {
+            if (remainder == 1) {
+                if (Number(bigArr[i]) + remainder > 9) {
+
+                    total.push((Number(bigArr[i]) + remainder).toString().split('')[1])
+                    remainder = 1
+                } else {
+                    total.push((Number(bigArr[i]) + remainder).toString())
+                    remainder = 0
+                }
+            } else {
+                total.push(Number(bigArr[i]).toString())
+                remainder = 0
+            }
+        }
+    }
+    return total.reverse().join('')
+}
