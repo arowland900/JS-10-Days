@@ -145,12 +145,11 @@ function add(a, b) {
 // DAY 4 Refactor
 
 function add(a, b) {
-    var res = '', c = 0, num = 0
+    var res = '', c = 0
     a = a.split('')
     b = b.split('')
     while (a.length || b.length || c) {
-        num = ~~a.pop() + ~~b.pop()
-        c += num
+        c += ~~a.pop() + ~~b.pop()
         res = c % 10 + res
         c = c > 9
     }
