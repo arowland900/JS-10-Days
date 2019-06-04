@@ -141,3 +141,18 @@ function add(a, b) {
     }
     return total.reverse().join('')
 }
+
+// DAY 4 Refactor
+
+function add(a, b) {
+    var res = '', c = 0, num = 0
+    a = a.split('')
+    b = b.split('')
+    while (a.length || b.length || c) {
+        num = ~~a.pop() + ~~b.pop()
+        c += num
+        res = c % 10 + res
+        c = c > 9
+    }
+    return res
+}
