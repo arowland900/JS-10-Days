@@ -155,7 +155,6 @@ function add(a, b) {
     }
     return res
 }
-<<<<<<< HEAD
 
 // DAY 5
 
@@ -174,5 +173,3 @@ Array.prototype.sameStructureAs = function (other) {
     }
     return true;
 };
-=======
->>>>>>> f77753d4ea14868dd95e89c581266da4e0da1455
