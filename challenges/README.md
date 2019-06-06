@@ -1,4 +1,4 @@
-# Day 1:
+## Day 1:
 
 In this kata, you will write a function that returns the positions and the values of the "peaks" (or local maxima) of a numeric array.
 
@@ -18,7 +18,7 @@ Have fun!
 
 ---
 
-# Day 2
+## Day 2:
 
 You are given a node that is the beginning of a linked list. This list always contains a tail and a loop.
 
@@ -26,13 +26,13 @@ Your objective is to determine the length of the loop.
 
 ---
 
-# Day 3
+## Day 3:
 
 Sudoku Checker – Write a function that check to see if a sudoku board has or has not been correctly filled out.
 
 ---
 
-# Day 4
+## Day 4:
 
 We need to sum big numbers and we require your help.
 
