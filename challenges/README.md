@@ -28,7 +28,7 @@ Your objective is to determine the length of the loop.
 
 ## Day 3:
 
-Sudoku Checker – Write a function that check to see if a sudoku board has or has not been correctly filled out.
+Sudoku Checker – Write a function that checks to see if a sudoku board has or has not been correctly filled out.
 
 ---
 
