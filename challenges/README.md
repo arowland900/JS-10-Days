@@ -39,3 +39,7 @@ Notes:
 The input numbers are big.
 The input is a string of only digits
 The numbers are positives
+
+#Day 5
+- Write a method that compares nesting structures between arrays. 
+- Return `true` if both arrays have the same nesting structure, and `false` if they do not
