@@ -1,4 +1,4 @@
-<!--  DAY ONE //-->
+// DAY 1:
 
 function pickPeaks(arr) {
 
@@ -27,7 +27,7 @@ function pickPeaks(arr) {
     return obj
 }
 
-// DAY 2
+// DAY 2:
 
 function loop_size(node) {
     var nodes = []
@@ -40,7 +40,7 @@ function loop_size(node) {
     return nodes.length - nodes.indexOf(n)
 }
 
-// DAY 3
+// DAY 3:
 
 function doneOrNot(board) {
 
@@ -78,7 +78,7 @@ function doneOrNot(board) {
     return "Finished!"
 }
 
-// DAY 4
+// DAY 4:
 
 function add(a, b) {
 
@@ -142,7 +142,7 @@ function add(a, b) {
     return total.reverse().join('')
 }
 
-// DAY 4 Refactor
+// DAY 4 Refactor:
 
 function add(a, b) {
     var res = '', c = 0
