@@ -1,4 +1,4 @@
-// DAY 1
+<!--  DAY ONE //-->
 
 function pickPeaks(arr) {
 
