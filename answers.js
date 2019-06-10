@@ -173,3 +173,9 @@ Array.prototype.sameStructureAs = function (other) {
     }
     return true;
 };
+
+// DAY 6
+
+function validate(password) {
+    return /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z0-9]{6,}$/.test(password);
+  }

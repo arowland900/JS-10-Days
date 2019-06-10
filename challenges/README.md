@@ -46,7 +46,19 @@ The input numbers are big.
 The input is a string of only digits
 The numbers are positives
 
-#Day 5
+---
+
+## Day 5
 - Write a method that compares nesting structures between arrays. 
 - Return `true` if both arrays have the same nesting structure, and `false` if they do not
 ---
+
+## Day 6
+Write regex that will validate a password to make sure it meets the following criteria:
+
+- At least six characters long
+- contains a lowercase letter
+- contains an uppercase letter
+- contains a number
+
+Valid passwords will only be alphanumeric characters.
