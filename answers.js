@@ -184,7 +184,6 @@ function validate(password) {
 
 function dirReduc(arr) {
     for (var i = 0; i < arr.length - 1; i++) {
-        console.log(arr)
         if (arr[i] == "NORTH" && arr[i + 1] == "SOUTH") {
             var a = arr.indexOf("NORTH")
             arr.splice(a, 2)
