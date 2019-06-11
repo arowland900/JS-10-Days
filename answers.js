@@ -185,23 +185,19 @@ function validate(password) {
 function dirReduc(arr) {
     for (var i = 0; i < arr.length - 1; i++) {
         if (arr[i] == "NORTH" && arr[i + 1] == "SOUTH") {
-            var a = arr.indexOf("NORTH")
-            arr.splice(a, 2)
+            arr.splice(i, 2)
             dirReduc(arr)
         }
         if (arr[i] == "SOUTH" && arr[i + 1] == "NORTH") {
-            var a = arr.indexOf("SOUTH")
-            arr.splice(a, 2)
+            arr.splice(i, 2)
             dirReduc(arr)
         }
         if (arr[i] == "EAST" && arr[i + 1] == "WEST") {
-            var a = arr.indexOf("EAST")
-            arr.splice(a, 2)
+            arr.splice(i, 2)
             dirReduc(arr)
         }
         if (arr[i] == "WEST" && arr[i + 1] == "EAST") {
-            var a = arr.indexOf("WEST")
-            arr.splice(a, 2)
+            arr.splice(i, 2)
             dirReduc(arr)
         }
     }
