@@ -203,3 +203,18 @@ function dirReduc(arr) {
     }
     return arr
 }
+
+// DAY 7 Refactor
+
+function dirReduc(arr) {
+    var obj = { NORTH: 1, SOUTH: -1, EAST: 2, WEST: -2 }
+    for (var i = 0; i < arr.length - 1; i++) {
+        var a = arr[i]
+        var b = arr[i + 1]
+        if (obj[a] + obj[b] == 0) {
+            arr.splice(i, 2)
+            dirReduc(arr)
+        }
+    }
+    return arr
+}
