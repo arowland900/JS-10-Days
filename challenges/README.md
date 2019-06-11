@@ -51,6 +51,7 @@ The numbers are positives
 ## Day 5
 - Write a method that compares nesting structures between arrays. 
 - Return `true` if both arrays have the same nesting structure, and `false` if they do not
+
 ---
 
 ## Day 6
@@ -62,3 +63,18 @@ Write regex that will validate a password to make sure it meets the following cr
 - contains a number
 
 Valid passwords will only be alphanumeric characters.
+
+---
+
+## Day 7
+Write a function that will simplify map directions. Given an array containing values `NORTH`,`SOUTH`,`EAST`, & `WEST`, return an array where all opposite *adjacent* values are removed. Be sure that once adjacent values are removed, the array is then checked once again for *newly adjacent values*.
+
+```
+Example:
+    dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+    output: ["WEST"]
+    dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])
+    output: ["NORTH", "WEST", "SOUTH", "EAST"]
+    dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])
+    output([])
+```

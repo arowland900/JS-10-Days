@@ -178,4 +178,6 @@ Array.prototype.sameStructureAs = function (other) {
 
 function validate(password) {
     return /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-Z0-9]{6,}$/.test(password);
-  }
+}
+
+// DAY 7
