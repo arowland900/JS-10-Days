@@ -218,3 +218,33 @@ function dirReduc(arr) {
     }
     return arr
 }
+
+// DAY 8 
+
+function factorial(n) {
+    let f = 1;
+    for (var i = 2; i <= n; i++) {
+        if (Number.isSafeInteger(f * i)) {
+            f = f * i;
+        } else {
+            let fi = 0;
+            for (let j = 0; j < i; j++) {
+                fi = addHelper(fi, f);
+            }
+            f = fi;
+        }
+    }
+    return f.toString()
+}
+
+function addHelper(a, b) {
+    var res = '', c = 0
+    a = a.toString().split('')
+    b = b.toString().split('')
+    while (a.length || b.length || c) {
+        c += ~~a.pop() + ~~b.pop()
+        res = c % 10 + res
+        c = c > 9
+    }
+    return res
+}
