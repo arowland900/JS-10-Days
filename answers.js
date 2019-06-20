@@ -248,9 +248,7 @@ function addHelper(a, b) {
 // DAY 9
 
 function dblLinear(n) {
-    // your code
     var a = [1, 3, 4]
-
     var i = 1
     while (a.length <= n * (n / 2)) {
         var x = a[i]
