@@ -247,3 +247,24 @@ function addHelper(a, b) {
 
 // DAY 9
 
+function dblLinear(n) {
+    // your code
+    var a = [1, 3, 4]
+
+    var i = 1
+    while (a.length <= n * (n / 2)) {
+        var x = a[i]
+        var y = a[i + 1]
+
+        a.push(x * 2 + 1)
+        a.push(y * 2 + 1)
+        a.push(x * 3 + 1)
+        a.push(y * 3 + 1)
+        var a = [...new Set(a)];
+        a.sort(function (a, b) {
+            return a - b
+        })
+        i += 2
+    }
+    return a[n]
+}
