@@ -253,16 +253,26 @@ function dblLinear(n) {
     while (a.length <= n * (n / 2)) {
         var x = a[i]
         var y = a[i + 1]
-
         a.push(x * 2 + 1)
         a.push(y * 2 + 1)
         a.push(x * 3 + 1)
         a.push(y * 3 + 1)
         var a = [...new Set(a)];
-        a.sort(function (a, b) {
-            return a - b
-        })
         i += 2
     }
+    a.sort((a, b) => a - b)
     return a[n]
+}
+
+// DAY 9 Refactor
+
+function dblLinear(n) {
+    var u = [1], c2 = 0, c3 = 0
+    for (var i = 0; i < n; i++) {
+        var x = 2 * u[c2] + 1, y = 3 * u[c3] + 1
+        if (x < y) { u.push(x); c2++; }
+        else if (y < x) { u.push(y); c3++; }
+        else { u.push(y); c2++; c3++; }
+    }
+    return u[n]
 }
