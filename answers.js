@@ -276,3 +276,29 @@ function dblLinear(n) {
     }
     return u[n]
 }
+
+//  Day 10
+
+function nLinear(m, n) {
+    m = m.sort((a, b) => a - b)
+    var u = [1]
+    var counter = {}
+    var adder = {}
+    for (var i = 0; i < m.length; i++) {
+        counter[m[i]] = 0
+    }
+
+    for (var j = 0; u.length <= n + 1; j++) {
+        for (var i = 0; i < m.length; i++) {
+            adder[m[i]] = u[counter[m[i]]] * m[i] + 1
+            var k = Object.values(adder).sort((a, b) => a - b).shift()
+            if (adder[m[i]] == k) {
+                counter[m[i]] += 1
+            }
+            if (u.indexOf(k) == -1) {
+                u.push(k)
+            }
+        }
+    }
+    return u[n]
+}
