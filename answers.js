@@ -302,3 +302,9 @@ function nLinear(m, n) {
     }
     return u[n]
 }
+
+// Day 10 refactor:
+
+// I couldn't figure out how to make this solution more efficient! 
+// However, there are numerous solutions here: 
+// https://www.codewars.com/kata/n-linear/solutions?show-solutions=1
