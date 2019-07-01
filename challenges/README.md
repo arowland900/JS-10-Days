@@ -139,3 +139,10 @@ Tests use large n values. Slow algorithms may time-out.
 Tests use large values in the m set. Algorithms which multiply further than neccessary may overflow.
 Linear run time and memory usage is possible.
 How can you build the sequence iteratively, without growing extra data structures?
+
+---
+## Day 11:
+
+Write a function that will solve a 9x9 Sudoku puzzle. The function will take one argument consisting of the 2D puzzle array, with the value 0 representing an unknown square.
+
+The Sudokus tested against your function will be "easy" (i.e. determinable; there will be no need to assume and test possibilities on unknowns) and can be solved with a brute-force approach.
