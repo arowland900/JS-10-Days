@@ -308,3 +308,134 @@ function nLinear(m, n) {
 // I couldn't figure out how to make this solution more efficient! 
 // However, there are numerous solutions here: 
 // https://www.codewars.com/kata/n-linear/solutions?show-solutions=1
+
+// Day 11
+
+function sudoku(puzzle) {
+    for (var i = 0; i < 9; i++) {
+        for (var j = 0; j < 9; j++) {
+            var options = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            var col = [], box = [], row = puzzle[i]
+            var all = [col, box, row]
+            if (puzzle[i][j] == 0) {
+                for (var n = 0; n < 9; n++) { col.push(puzzle[n][j]) }
+
+                if (i < 3 && j < 3) {
+                    box.push(puzzle[0][0])
+                    box.push(puzzle[0][1])
+                    box.push(puzzle[0][2])
+                    box.push(puzzle[1][0])
+                    box.push(puzzle[1][1])
+                    box.push(puzzle[1][2])
+                    box.push(puzzle[2][0])
+                    box.push(puzzle[2][1])
+                    box.push(puzzle[2][2])
+                }
+                else if (i < 3 && j < 6) {
+                    box.push(puzzle[0][3])
+                    box.push(puzzle[0][4])
+                    box.push(puzzle[0][5])
+                    box.push(puzzle[1][3])
+                    box.push(puzzle[1][4])
+                    box.push(puzzle[1][5])
+                    box.push(puzzle[2][3])
+                    box.push(puzzle[2][4])
+                    box.push(puzzle[2][5])
+                }
+                else if (i < 3 && j < 9) {
+                    box.push(puzzle[0][6])
+                    box.push(puzzle[0][7])
+                    box.push(puzzle[0][8])
+                    box.push(puzzle[1][6])
+                    box.push(puzzle[1][7])
+                    box.push(puzzle[1][8])
+                    box.push(puzzle[2][6])
+                    box.push(puzzle[2][7])
+                    box.push(puzzle[2][8])
+                }
+                else if (i < 6 && j < 3) {
+                    box.push(puzzle[3][0])
+                    box.push(puzzle[3][1])
+                    box.push(puzzle[3][2])
+                    box.push(puzzle[4][0])
+                    box.push(puzzle[4][1])
+                    box.push(puzzle[4][2])
+                    box.push(puzzle[5][0])
+                    box.push(puzzle[5][1])
+                    box.push(puzzle[5][2])
+                }
+                else if (i < 6 && j < 6) {
+                    box.push(puzzle[3][3])
+                    box.push(puzzle[3][4])
+                    box.push(puzzle[3][5])
+                    box.push(puzzle[4][3])
+                    box.push(puzzle[4][4])
+                    box.push(puzzle[4][5])
+                    box.push(puzzle[5][3])
+                    box.push(puzzle[5][4])
+                    box.push(puzzle[5][5])
+                }
+                else if (i < 6 && j < 9) {
+                    box.push(puzzle[3][6])
+                    box.push(puzzle[3][7])
+                    box.push(puzzle[3][8])
+                    box.push(puzzle[4][6])
+                    box.push(puzzle[4][7])
+                    box.push(puzzle[4][8])
+                    box.push(puzzle[5][6])
+                    box.push(puzzle[5][7])
+                    box.push(puzzle[5][8])
+                }
+                else if (i < 9 && j < 3) {
+                    box.push(puzzle[6][0])
+                    box.push(puzzle[6][1])
+                    box.push(puzzle[6][2])
+                    box.push(puzzle[7][0])
+                    box.push(puzzle[7][1])
+                    box.push(puzzle[7][2])
+                    box.push(puzzle[8][0])
+                    box.push(puzzle[8][1])
+                    box.push(puzzle[8][2])
+                }
+                else if (i < 9 && j < 6) {
+                    box.push(puzzle[6][3])
+                    box.push(puzzle[6][4])
+                    box.push(puzzle[6][5])
+                    box.push(puzzle[7][3])
+                    box.push(puzzle[7][4])
+                    box.push(puzzle[7][5])
+                    box.push(puzzle[8][3])
+                    box.push(puzzle[8][4])
+                    box.push(puzzle[8][5])
+                }
+                else if (i < 9 && j < 9) {
+                    box.push(puzzle[6][6])
+                    box.push(puzzle[6][7])
+                    box.push(puzzle[6][8])
+                    box.push(puzzle[7][6])
+                    box.push(puzzle[7][7])
+                    box.push(puzzle[7][8])
+                    box.push(puzzle[8][6])
+                    box.push(puzzle[8][7])
+                    box.push(puzzle[8][8])
+                }
+
+                all.forEach(a => {
+                    a.forEach(c => {
+                        if (c > 0) {
+                            var spot = options.indexOf(c)
+                            if (spot > -1) {
+                                options.splice(spot, 1)
+                            }
+                        }
+                        if (options.length == 1) {
+                            puzzle[i][j] = options[0]
+                            sudoku(puzzle)
+                        }
+                    })
+                })
+            }
+        }
+    }
+    return puzzle
+}
