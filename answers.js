@@ -403,7 +403,7 @@ function getPINs(observed, answer = []) {
 
 function getPINs(observed) {
 
-    var opts = {
+    const opts = {
         1: ['1', '2', '4'],
         2: ['1', '2', '3', '5'],
         3: ['2', '3', '6'],
@@ -415,28 +415,26 @@ function getPINs(observed) {
         9: ['6', '8', '9'],
         0: ['0', '8']
     }
-    var code = observed.split('')
-    var arr = [], final = [], answer = []
+    const code = observed.split('')
+    let arr = [], final = [], answer = []
 
     code.forEach((c, i) => {
         arr = opts[c]
-        if (code.length == 1) {
-            answer = arr
-        }
+        if (code.length == 1) answer = arr
         if (code.length > 1) {
             if (answer.length == 0) {
                 if (code[i + 1]) {
                     arr.forEach((t, j) => {
-                        opts[code[i + 1]].forEach((o, k) => {
-                            answer.push(arr[j].toString() + o.toString())
+                        opts[code[i + 1]].forEach(o => {
+                            answer.push(arr[j] + o)
                         })
                     })
                 }
             } else {
                 if (code[i + 1]) {
                     answer.forEach((x, y) => {
-                        opts[code[i + 1]].forEach((o, k) => {
-                            final.push(answer[y].toString() + o.toString())
+                        opts[code[i + 1]].forEach(o => {
+                            final.push(answer[y] + o)
                         })
                     })
                     answer = final
@@ -445,8 +443,5 @@ function getPINs(observed) {
         }
     })
 
-    var filtered = answer.filter(x => {
-        return x.length >= code.length
-    })
-    return filtered
+    return answer.filter(x => x.length >= code.length)
 }
