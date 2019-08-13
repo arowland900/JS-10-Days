@@ -435,3 +435,39 @@ function getPINs(observed) {
     })
     return answer.filter(x => x.length >= code.length)
 }
+
+// DAY 12 SECOND REFACTOR:
+// I discovered that using reduce can seriously simplify the logic!
+
+function getPINs(ob) {
+    var ob = ob.split('');
+    var pins = [];
+    var code = {
+        0: ["0", "8"],
+        1: ["1", "2", "4"],
+        2: ["1", "2", "3", "5"],
+        3: ["2", "3", "6"],
+        4: ["1", "4", "5", "7"],
+        5: ["2", "4", "5", "6", "8"],
+        6: ["3", "5", "6", "9"],
+        7: ["4", "7", "8"],
+        8: ["0", "5", "7", "8", "9"],
+        9: ["6", "8", "9"]
+    };
+
+    for (var i in ob) {
+        var pin = code[ob[i]]
+        pins.push(pin)
+    }
+
+    return pins.reduce(function (a, c) {
+        var res = []
+        for (var i in a) {
+            for (var j in c) {
+                res.push(a[i] + c[j])
+            }
+        }
+        return res
+    })
+
+}
