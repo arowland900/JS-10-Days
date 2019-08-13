@@ -343,3 +343,56 @@ function sudoku(puzzle) {
     }
     return puzzle
 }
+
+// DAY 12
+
+// first attempt, only works for 'observed' pins with 3 or less digits.  Attempting to refactor using recursion
+function getPINs(observed, answer = []) {
+
+    var opts = {
+        1: ['1', '2', '4'],
+        2: ['1', '2', '3', '5'],
+        3: ['2', '3', '6'],
+        4: ['1', '4', '5', '7'],
+        5: ['2', '4', '5', '6', '8'],
+        6: ['3', '5', '6', '9'],
+        7: ['4', '7', '8'],
+        8: ['0', '5', '7', '8', '9'],
+        9: ['6', '8', '9'],
+        0: ['0', '8']
+    }
+    var code = observed.split('')
+    var arr = []
+    var final = []
+
+    code.forEach((c, i) => {
+        arr = opts[c]
+        if (code.length == 1) {
+            answer = arr
+        }
+        if (code.length > 1) {
+            if (answer.length == 0) {
+                if (code[i + 1]) {
+                    arr.forEach((t, j) => {
+                        opts[code[i + 1]].forEach(o => {
+                            answer.push(arr[j].toString() + o.toString())
+                        })
+                    })
+                }
+            } else {
+                console.log('answer', answer)
+                console.log('arr', arr)
+                if (code[i + 1]) {
+                    answer.forEach((x, y) => {
+                        opts[code[i + 1]].forEach(o => {
+                            final.push(answer[y].toString() + o.toString())
+                        })
+                    })
+                    answer = final
+                }
+            }
+        }
+    })
+
+    return answer
+}
