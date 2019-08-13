@@ -421,27 +421,17 @@ function getPINs(observed) {
     code.forEach((c, i) => {
         arr = opts[c]
         if (code.length == 1) answer = arr
-        if (code.length > 1) {
+        else {
             if (answer.length == 0) {
+                if (code[i + 1]) arr.forEach((t, j) => { opts[code[i + 1]].forEach(o => { answer.push(arr[j] + o) }); });
+            }
+            else {
                 if (code[i + 1]) {
-                    arr.forEach((t, j) => {
-                        opts[code[i + 1]].forEach(o => {
-                            answer.push(arr[j] + o)
-                        })
-                    })
-                }
-            } else {
-                if (code[i + 1]) {
-                    answer.forEach((x, y) => {
-                        opts[code[i + 1]].forEach(o => {
-                            final.push(answer[y] + o)
-                        })
-                    })
+                    answer.forEach((x, y) => { opts[code[i + 1]].forEach(o => { final.push(answer[y] + o) }); });
                     answer = final
                 }
             }
         }
     })
-
     return answer.filter(x => x.length >= code.length)
 }
