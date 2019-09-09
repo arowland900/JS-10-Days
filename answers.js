@@ -471,3 +471,38 @@ function getPINs(ob) {
     })
 
 }
+
+// DAY 13
+
+function balanced(str) {
+
+    var arr = str.split('')
+    var hold = []
+    var match = {
+        "{": "}",
+        "(": ")",
+        "[": "]"
+    }
+    for (var i = 0; i < arr.length; i++) {
+        if (match[arr[i]]) {
+            hold.push(arr[i])
+        }
+        if (hold[hold.length - 1] != "(" && arr[i] == ")") {
+            return false
+        } else if (arr[i] == ")" && hold[hold.length - 1] == "(") {
+            hold.pop()
+        }
+        if (arr[i] == "]" && hold[hold.length - 1] != "[") {
+            return false
+        } else if (arr[i] == "]" && hold[hold.length - 1] == "[") {
+            hold.pop()
+        }
+        if (arr[i] == "}" && hold[hold.length - 1] != "{") {
+            return false
+        } else if (arr[i] == "}" && hold[hold.length - 1] == "{") {
+            hold.pop()
+        }
+    }
+    if (!hold.length) return true
+    return false
+}
