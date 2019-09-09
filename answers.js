@@ -506,3 +506,28 @@ function balanced(str) {
     if (!hold.length) return true
     return false
 }
+
+// DAY 13 REFACTOR
+
+function balanced(str) {
+
+    var arr = str.split('')
+    var hold = []
+    var open = ["{", "(", "["]
+    var close = ["}", ')', ']']
+
+    for (var i = 0; i < arr.length; i++) {
+        if (open.includes(arr[i])) {
+            hold.push(arr[i])
+        }
+        for (var j = 0; j < open.length; j++) {
+            var h = hold[hold.length - 1]
+            if (arr[i] == close[j]) {
+                if (h != open[j]) return false
+                else hold.pop()
+            }
+        }
+    }
+    if (!hold.length) return true
+    return false
+}
