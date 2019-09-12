@@ -532,3 +532,18 @@ function balanced(str) {
     return false
 }
 
+//  DAY 14
+
+function totalTaskTime(arr, num) {
+    let count = 0
+    if (arr.length === 0) return 0
+    if (num >= arr.length) return Math.max(...arr)
+    while (arr.length > 0) {
+        for (let i = 0; i < num && i < arr.length; i++) {
+            if (arr[i]) arr[i]--
+        }
+        count += 1
+        arr = arr.filter(a => a > 0)
+    }
+    return count
+}
