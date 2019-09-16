@@ -549,3 +549,24 @@ function totalTaskTime(arr, num) {
 }
 
 // DAY 15
+
+function check(a, b, c, val) {
+    var str = ''
+    for (var i = c, j = 0; i >= 0; i-- , j++) {
+        let aExp = Math.pow(a, i), bExp = Math.pow(b, j)
+        if (i > 1 && j != 0) {
+            let d = 1, e = 1, f = 1
+            for (var x = c; x > 0; x--) d *= x
+            for (var y = c - j; y > 0; y--) e *= y
+            for (var z = j; z > 0; z--) f *= z
+            str += `${bExp * (aExp) * (d / (e * f))}${val}` + '^' + `${i}+`
+        } else if (i == c && aExp != 0) str += `${aExp}${val}` + '^' + `${i}+`
+        else if (i == 1 && bExp * (aExp) != 0) str += `${bExp * (aExp) * c}${val}+`
+        else if (bExp != 0) str += `${bExp}`
+    }
+    str = str.replace(/\+-/g, '-')
+    if (a == 1 || (str.substring(0, 1) == 1 && alph.indexOf(str.substring(1, 2)) != -1)) return str.substring(1)
+    if (str.substring(0, 1) == '-' && str.substring(1, 2) == '1' && alph.indexOf(str.substring(2, 3)) != -1) return '-' + str.substring(2)
+    if ('+-'.includes(str.charAt(str.length - 1))) return str.slice(0, -1)
+    return str
+}
