@@ -551,7 +551,6 @@ function totalTaskTime(arr, num) {
 // DAY 15
 
 let alph = 'abcdefghijklmnopqrstuvwxyz'
-
 function check(a, b, c, val) {
     var str = ''
     for (var i = c, j = 0; i >= 0; i-- , j++) {
@@ -572,7 +571,6 @@ function check(a, b, c, val) {
     if ('+-'.includes(str.charAt(str.length - 1))) return str.slice(0, -1)
     return str
 }
-
 function expand(expr) {
     let arr = expr.split('')
     const pwr = arr.slice(arr.indexOf('^') + 1).join('')
