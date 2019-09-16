@@ -550,6 +550,8 @@ function totalTaskTime(arr, num) {
 
 // DAY 15
 
+let alph = 'abcdefghijklmnopqrstuvwxyz'
+
 function check(a, b, c, val) {
     var str = ''
     for (var i = c, j = 0; i >= 0; i-- , j++) {
