@@ -572,3 +572,21 @@ function check(a, b, c, val) {
     if ('+-'.includes(str.charAt(str.length - 1))) return str.slice(0, -1)
     return str
 }
+
+function expand(expr) {
+    let arr = expr.split('')
+    const pwr = arr.slice(arr.indexOf('^') + 1).join('')
+    let chunk = arr.slice(1, arr.indexOf(')')), a, b, val
+    if (pwr == 0) return '1'
+    if (pwr == 1) return chunk.join('')
+    for (let i = 0; i < chunk.length; i++) {
+        if (alph.includes(chunk[i])) {
+            val = chunk[i]
+            a = chunk.slice(0, chunk.indexOf(val)).join('')
+            b = chunk.slice(chunk.indexOf(val) + 1, chunk.length).join('')
+        }
+    }
+    if (!a) a = 1
+    if (a == '-') a = -1
+    return check(a, b, pwr, val)
+}
